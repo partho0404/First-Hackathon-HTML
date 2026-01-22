@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Nested Lists and Tables - Beginner to Advanced</title>
+</head>
+<body>
+     <header>
+      <table border="1">
+     <tr >
+          <td><a href="home.html">🏠 Home</a></td>
+          <td><a href="first.html">📡 Introduction to The Internet</a></td>
+          <td><a href="second.html">📑 Introduction to HTML</a></td>
+          <!-- <td><a href="third.html">📊 HTML Nested Lists & Tables</a></td> -->
+     </tr>
+     <tr >
+          
+          <td><a href="fourth.html">📂 File Path & Boilerplate Code</a></td>
+          <td><a href="fifth.html">📝 Forms in HTML</a></td>
+          <td ><a href="sixth.html">🎬 HTML Media</a></td>
+     </tr>
+    
+</table> 
+<br>
+<div >
+     <a href="second.html"><button>&larr; Previous</button></a>
+     <a href="fourth.html"><button>Next &rarr;</button></a>
+</div>
+     <hr>
+     </header>
+
+  <h1>HTML Lists and Tables</h1>
+  <p>
+    This page explains the concepts of <b>Lists</b> and <b>Tables</b> in HTML, 
+    starting from beginner level to advanced with examples.
+  </p>
+
+  <hr>
+
+  <!-- Lists Section -->
+  <h2>1. HTML Lists</h2>
+  <p>Lists allow us to organize content in a structured format. HTML provides three main types of lists:</p>
+
+  <h3>1.1 Unordered List (&lt;ul&gt;)</h3>
+  <p>Used when the order of items does not matter. Items are marked with bullets.</p>
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+  </ul>
+
+  <h3>1.2 Ordered List (&lt;ol&gt;)</h3>
+  <p>Used when the order of items matters. Items are automatically numbered.</p>
+  <ol>
+    <li>Wake up</li>
+    <li>Brush teeth</li>
+    <li>Go to college</li>
+  </ol>
+
+  <h3>1.3 Nested List</h3>
+  <p>Lists can be placed inside another list to create sub-items.</p>
+  <ul>
+    <li>Programming Languages
+      <ol>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
+      </ol>
+    </li>
+    <li>Databases
+      <ul>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </li>
+  </ul>
+
+  <code>
+     <h2>Nested Table Example</h2>
+
+<pre><code>
+&lt;table t;
+      Outer Cell 1
+      &lt;table t;
+          &lt;td&gt;Inner 1&lt;/td&gt;
+          &lt;td&gt;Inner 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td&gt;Outer Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+  </code>
+
+  <h3>1.4 Description List (&lt;dl&gt;)</h3>
+  <p>Used to define terms and their descriptions.</p>
+  <dl>
+    <dt><b>HTML</b></dt>
+    <dd>A markup language for creating webpages.</dd>
+    <dt><b>CSS</b></dt>
+    <dd>Used for styling HTML pages.</dd>
+    <dt><b>JavaScript</b></dt>
+    <dd>A programming language for making webpages interactive.</dd>
+  </dl>
+
+  <hr>
+
+  <!-- Tables Section -->
+  <h2>2. HTML Tables</h2>
+  <p>Tables are used to arrange data in rows and columns.</p>
+
+  <h3>2.1 Basic Table</h3>
+  <p>A simple table with rows and columns:</p>
+  <table arks</th>
+    </tr>
+    <tr>
+      <td>Math</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>Science</td>
+      <td>85</td>
+    </tr>
+  </table>
+  
+          <h2>Table Example Code</h2>
+<pre>
+<code>
+&lt;table &gt;Subject&lt;/th&gt;
+    &lt;th&gt;Marks&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Math&lt;/td&gt;
+    &lt;td&gt;90&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Science&lt;/td&gt;
+    &lt;td&gt;85&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+    
+
+  <h3>2.2 Table with Header, Body, and Footer</h3>
+  <p>Tables can be divided into header (&lt;thead&gt;), body (&lt;tbody&gt;), and footer (&lt;tfoot&gt;).</p>
+  <table >
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Laptop</td>
+        <td>$800</td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td>$500</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><b>Total</b></td>
+        <td><b>$1300</b></td>
+      </tr>
+    </tfoot>
+  </table>
+  <h2>Table Code Example</h2>
+
+<pre><code>
+&lt;table t;
+      &lt;th&gt;Product&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Laptop&lt;/td&gt;
+      &lt;td&gt;$800&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phone&lt;/td&gt;
+      &lt;td&gt;$500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;b&gt;Total&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;$1300&lt;/b&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre>
+
+
+  <h3>2.3 Table with Colspan and Rowspan</h3>
+  <p><b>colspan</b> merges columns, and <b>rowspan</b> merges rows.</p>
+  <table       <th colspan="2">Scores</th>
+    </tr>
+    <tr>
+      <th>Math</th>
+      <th>Science</th>
+    </tr>
+    <tr>
+      <td>Alex</td>
+      <td>95</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <td>Sara</td>
+      <td>89</td>
+      <td>92</td>
+    </tr>
+  </table>
+
+  <h2>Rowspan and Colspan Table Example</h2>
+
+<pre><code>
+&lt;table owspan="2"&gt;Name&lt;/th&gt;
+    &lt;th colspan="2"&gt;Scores&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Math&lt;/th&gt;
+    &lt;th&gt;Science&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alex&lt;/td&gt;
+    &lt;td&gt;95&lt;/td&gt;
+    &lt;td&gt;88&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Sara&lt;/td&gt;
+    &lt;td&gt;89&lt;/td&gt;
+    &lt;td&gt;92&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+
+  <h3>2.4 Nested Table</h3>
+  <p>One table can be placed inside another.</p>
+  <table ble nner 1</td>
+            <td>Inner 2</td>
+          </tr>
+        </table>
+      </td>
+      <td>Outer Cell 2</td>
+    </tr>
+  </table>
+  <h2>Nested Table Example</h2>
+
+<pre><code>
+&lt;table t;
+      Outer Cell 1
+      &lt;table t;
+          &lt;td&gt;Inner 1&lt;/td&gt;
+          &lt;td&gt;Inner 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td&gt;Outer Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+
+  <hr>
+
+  <!-- Conclusion -->
+  <h2>Conclusion</h2>
+  <p>
+    In this tutorial, we covered:
+    <ul>
+      <li>Different types of lists: unordered, ordered, nested, and description lists.</li>
+      <li>Different types of tables: basic, advanced with header/body/footer, colspan, rowspan, and nested tables.</li>
+    </ul>
+    Mastering these concepts will help you create structured and readable webpages.
+  </p><hr>
+  <div >
+     <a href="second.html"><button>&larr; Previous</button></a>
+     <a href="fourth.html"><button>Next &rarr;</button></a>
+</div><br>
+  <iframe src="https://www.youtube.com/embed/AJ4E1zf5tQs" allowfullscreen></iframe>
+  
+
+  <hr>
+  <p>&copy; 2025 | HTML Lists and Tables Tutorial</p>
+
+</body>
+</html>

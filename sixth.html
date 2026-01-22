@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Media (Video & Audio)</title>
+</head>
+<body>
+     <header>
+        <table  border="1">
+     <tr >
+          <td><a href="home.html">🏠 Home</a></td>
+          <td><a href="first.html">📡 Introduction to The Internet</a></td>
+          <td><a href="second.html">📑 Introduction to HTML</a></td>
+          
+     </tr>
+     <tr >
+          <td><a href="third.html">📊 HTML Nested Lists & Tables</a></td>
+          <td><a href="fourth.html">📂 File Path & Boilerplate Code</a></td>
+          <td><a href="fifth.html">📝 Forms in HTML</a></td>
+          <!-- <td ><a href="sixth.html">🎬 HTML Media</a></td> -->
+     </tr>
+    
+</table> <br>
+
+
+         <div >
+     <a href="fifth.html"><button>&larr; Previous</button></a>
+     <a href="home.html"><button>&larr; Home </button></a>
+</div><hr>
+     </header>
+    <h1>HTML MEDIA</h1>
+
+    <h2>First Principle: The Web is More Than Text and Images</h2>
+    <p>
+        The fundamental truth is that a webpage should be able to deliver any kind of content, not just static text and pictures.
+        For years, this was a major problem. To play a video or audio file, browsers had to rely on third-party plugins like Adobe Flash, QuickTime, or Silverlight.
+        This was inefficient, insecure, and inconsistent across different computers.
+    </p>
+
+    <h2>The Core Problem</h2>
+    <p>
+        How can we embed video and audio into a webpage in a <strong>standardized, native, and plugin-free</strong> way?
+        We need a universal system that works on every modern browser, from a desktop PC to a mobile phone, without requiring the user to install anything extra.
+    </p>
+
+    <h2>The Logical Solution: The HTML5 &lt;video&gt; and &lt;audio&gt; Tags</h2>
+    <p>
+        The solution was to create dedicated HTML tags whose sole purpose is to embed and control media.
+    </p>
+    <hr>
+
+    <h3>Part 1: The Basics - Getting a Video on the Page</h3>
+    <p>The star of the show is the <code>&lt;video&gt;</code> tag. At its simplest, it just needs to know the source of the video file.</p>
+
+    <p><strong>Example:</strong></p>
+    <pre>
+&lt;!-- This is the most basic implementation --&gt;
+&lt;video src="my-awesome-video.mp4"&gt;&lt;/video&gt;
+    </pre>
+
+    <p><strong>Problem:</strong> You just see the first frame; no controls.</p>
+    <p><strong>Solution:</strong> Add the <code>controls</code> attribute:</p>
+    <pre>
+&lt;video src="my-awesome-video.mp4" controls&gt;&lt;/video&gt;
+    </pre>
+
+    <hr>
+    <h3>Part 2: Intermediate - Gaining More Control with Attributes</h3>
+    <ul>
+        <li><strong>width and height:</strong> Set player dimensions.
+            <pre>
+&lt;video src="video.mp4" width="640" height="360" controls&gt;&lt;/video&gt;
+            </pre>
+        </li>
+        <li><strong>autoplay:</strong> Starts playing automatically (must add muted for modern browsers):
+            <pre>
+&lt;video src="video.mp4" autoplay muted controls&gt;&lt;/video&gt;
+            </pre>
+        </li>
+        <li><strong>loop:</strong> Restarts video automatically.</li>
+        <li><strong>poster:</strong> Displays an image before playing:
+            <pre>
+&lt;video src="video.mp4" poster="images/video-thumbnail.jpg" controls&gt;&lt;/video&gt;
+            </pre>
+        </li>
+    </ul>
+
+    <hr>
+    <h3>Part 3: The &lt;audio&gt; Tag</h3>
+    <p>The <code>&lt;audio&gt;</code> tag works like the <code>&lt;video&gt;</code> tag but without visuals.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+&lt;p&gt;Listen to our theme song:&lt;/p&gt;
+&lt;audio src="audio/theme-song.mp3" controls&gt;&lt;/audio&gt;
+    </pre>
+
+    <hr>
+    <h3>Part 4: Advanced & Professional - Solving Real-World Problems</h3>
+    <h4>Problem #1: Not all browsers support the same video formats.</h4>
+    <p><strong>Solution: The &lt;source&gt; Element</strong></p>
+    <pre>
+&lt;video controls poster="images/thumbnail.jpg"&gt;
+  &lt;source src="videos/my-video.webm" type="video/webm"&gt;
+  &lt;source src="videos/my-video.mp4" type="video/mp4"&gt;
+  Sorry, your browser doesn't support embedded videos.
+&lt;/video&gt;
+    </pre>
+
+    <h4>Problem #2: Your video is not accessible.</h4>
+    <p><strong>Solution: The &lt;track&gt; Element (captions/subtitles)</strong></p>
+    <pre>
+&lt;video controls&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+
+  &lt;!-- English Captions for the hearing impaired --&gt;
+  &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+
+  &lt;!-- Spanish Subtitles for translation --&gt;
+  &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+&lt;/video&gt;
+    </pre>
+
+    <p>Breakdown of &lt;track&gt; attributes:</p>
+    <ul>
+        <li><strong>src:</strong> Path to the .vtt file.</li>
+        <li><strong>kind:</strong> captions, subtitles, or descriptions.</li>
+        <li><strong>srclang:</strong> Language code (e.g., "en").</li>
+        <li><strong>label:</strong> Display name in video player's captions menu.</li>
+    </ul>
+<hr>
+    <h2>The Robust & Professional Method (&lt;source&gt;)</h2>
+
+    <h3>Example 1: Using &lt;source&gt; for Maximum Browser Compatibility</h3>
+    <pre>
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+    </pre>
+
+    <p>This method ensures maximum browser compatibility.</p>
+    <ul>
+        <li><strong>.mp4 (H.264 codec):</strong> Most widely supported.</li>
+        <li><strong>.webm (VP8/VP9 codec):</strong> Excellent support in Chrome and Firefox.</li>
+        <li><strong>.ogg (Theora codec):</strong> Older open-source format.</li>
+    </ul>
+
+    <p><strong>How it works:</strong> The browser reads the list of &lt;source&gt; tags from top to bottom and plays the first supported format. Fallback text is displayed if none are supported.</p>
+
+    <hr>
+    <h2>Example 2: The Simple & Direct Method (src attribute)</h2>
+    <pre>
+&lt;video src="a.mp4" controls&gt;&lt;/video&gt;
+    </pre>
+
+    <p>Pros: Very simple and easy to write. Only one video file required.</p>
+    <p>Cons: If the browser doesn’t support the file, the video fails.</p>
+
+    <hr>
+    <h2>Comparison Table</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Feature</th>
+            <th>Example 1 (&lt;source&gt; Method)</th>
+            <th>Example 2 (src Method)</th>
+        </tr>
+        <tr>
+            <td>Browser Compatibility</td>
+            <td>Excellent. Provides multiple formats as fallbacks.</td>
+            <td>Good, but not guaranteed. Single format only.</td>
+        </tr>
+        <tr>
+            <td>Flexibility</td>
+            <td>High. List multiple formats.</td>
+            <td>Low. Only one format.</td>
+        </tr>
+        <tr>
+            <td>Simplicity</td>
+            <td>More complex. Multiple lines/files.</td>
+            <td>Very simple. One line.</td>
+        </tr>
+        <tr>
+            <td>Fallback for Old Browsers</td>
+            <td>Excellent. Custom text displayed.</td>
+            <td>None.</td>
+        </tr>
+        <tr>
+            <td>Best Use Case</td>
+            <td>Public websites supporting all users.</td>
+            <td>Quick tests or internal projects.</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>HTML Symbols and Entities</h2>
+    <h3>Copyright Symbol ©</h3>
+
+    <p>Using the Entity Name (Recommended):</p>
+    <pre>
+&lt;footer&gt;
+    &lt;p&gt;Copyright &amp;copy; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+    </pre>
+    <p>Renders as: Copyright © 2024 My Awesome Website. All Rights Reserved.</p>
+
+    <p>Using the Entity Number:</p>
+    <pre>
+&lt;footer&gt;
+    &lt;p&gt;Copyright &amp;#169; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+    </pre>
+    <p>Renders as: Copyright © 2024 My Awesome Website. All Rights Reserved.</p>
+
+    <h3>Other Common Symbol Entities</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Symbol</th>
+            <th>Description</th>
+            <th>Entity Name</th>
+            <th>Entity Number</th>
+        </tr>
+        <tr>
+            <td>©</td>
+            <td>Copyright</td>
+            <td>&amp;copy;</td>
+            <td>&amp;#169;</td>
+        </tr>
+        <tr>
+            <td>®</td>
+            <td>Registered Trademark</td>
+            <td>&amp;reg;</td>
+            <td>&amp;#174;</td>
+        </tr>
+        <tr>
+            <td>™</td>
+            <td>Trademark</td>
+            <td>&amp;trade;</td>
+            <td>&amp;#8482;</td>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>Less-than (for code)</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>Greater-than (for code)</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>Ampersand</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+        </tr>
+        <tr>
+            <td>"</td>
+            <td>Double Quote</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+        </tr>
+        <tr>
+            <td>€</td>
+            <td>Euro Sign</td>
+            <td>&amp;euro;</td>
+            <td>&amp;#8364;</td>
+        </tr>
+    </table>
+
+    <p>Why do we need entities for &lt; and &gt;? Because the browser interprets them as HTML tags. To display code like &lt;p&gt;, you must write &amp;lt;p&amp;gt;.</p>
+    <hr>
+
+
+         <div >
+     <a href="fifth.html"><button>&larr; Previous</button></a>
+     <a href="home.html"><button>&larr; Home </button></a>
+</div><br>
+
+    <iframe src="https://www.youtube.com/embed/NGYp1zCBthk" allowfullscreen></iframe>
+
+</body>
+</html>
